@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Boom</title>
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/drwdiqszj/image/upload/v1782359722/BBlogof_pjm0fg.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="header-container">
+      <!-- Mobile Menu Toggle Button -->
+      <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMobileMenu(event)">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="#" class="logo-container">
+        <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782359722/BBlogof_pjm0fg.png"
+          alt="Burger Boom Logo" class="logo-img">
+      </a>
+
+      <!-- Navigation Menu (Aligned Left) -->
+      <nav class="nav-menu">
+        <a href="#" class="nav-link active">INICIO</a>
+        <a href="#ubicacion-section" class="nav-link">UBICACIÓN</a>
+        <!-- <a href="#" class="nav-link">PEDIDOS CORPORATIVOS</a> -->
+        <!-- Status Badge -->
+        <div class="status-badge" id="status-badge">
+          <span class="status-dot"></span>
+          <span class="status-text">...</span>
+          <div class="status-tooltip">
+            <strong>HORARIO DE ATENCIÓN</strong>
+            <span>Lun - Dom (excepto Mar): 18:30 a 22:30 hrs</span>
+            <span>Vie y Sáb: 18:30 a 23:30 hrs</span>
+            <span class="tooltip-timezone">(Hora de Chile)</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mascot Logo (Aligned Right) -->
+      <div class="mascot-container">
+        <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782515938/bunnynof_sxikja.png" alt="Burger Boom Mascot" class="mascot-img">
+      </div>
+    </div>
+  </header>
+
+  <!-- Empty main section for the page content -->
+  <main class="main-content">
+    <div class="menu-container">
+
+      <!-- Category Selection View -->
+      <div class="categories-view" id="categories-view">
+        <!-- Main Menu Banner -->
+        <div class="main-menu-banner">
+          <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782656547/Disen%CC%83o_sin_ti%CC%81tulo_12_zlthqk.png" alt="Burger Boom Banner" class="banner-img">
+        </div>
+
+        <div class="categories-grid">
+          <!-- Card 1: Burgers -->
+          <a href="#burgers" class="category-card">
+            <div class="category-card-frame">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782504946/BaconJam_pnd6gc.png" alt="Burgers" class="category-img">
+            </div>
+            <h2 class="category-card-title">BURGERS</h2>
+          </a>
+
+          <!-- Card 2: Bebidas -->
+          <a href="#bebidas" class="category-card">
+            <div class="category-card-frame">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782568761/cocacola_o4pi9l.png" alt="Bebidas" class="category-img bebidas-category-img">
+            </div>
+            <h2 class="category-card-title">BEBIDAS</h2>
+          </a>
+
+          <!-- Card 3: Acompañamientos -->
+          <a href="#acompanamientos" class="category-card">
+            <div class="category-card-frame">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782522074/papastocino_k5usct.png" alt="Acompañamientos" class="category-img acompanamientos-category-img">
+            </div>
+            <h2 class="category-card-title">ACOMPAÑAMIENTOS</h2>
+          </a>
+
+        </div>
+
+        <!-- Location Section -->
+        <div class="location-section" id="ubicacion-section">
+          <h2 class="location-title">Ubicación</h2>
+          <div class="location-divider"></div>
+          <p class="location-address">
+            Chuquicamata 97, La Calera, Región de Valparaíso, Chile.
+          </p>
+          <div class="map-wrapper">
+            <iframe
+              src="https://maps.google.com/maps?q=Burger+Boom,+Chuquicamata+97,+La+Calera,+Chile&t=&z=17&ie=UTF8&output=embed"
+              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Subpages (Burgers Menu) -->
+      <div class="menu-detail-view" id="burgers-detail" style="display: none;">
+        <button class="back-btn" onclick="goToHome(event)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          VOLVER AL INICIO
+        </button>
+        <h2 class="detail-title">Burgers</h2>
+        <div class="detail-divider"></div>
+
+        <div class="burgers-promo-banner">
+          <span class="promo-badge">TODAS LAS BURGERS VIENEN CON PAPAS GRATIS</span>
+          <span class="promo-subtext">¡Puedes hacerla doble por +$1.500!</span>
+        </div>
+
+        <div class="products-grid">
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Cheese Burger</h3>
+              <p class="product-description">Carne, doble queso cheddar, salsa de queso cheddar, tocino y salsa de la casa.</p>
+              <span class="product-price">$7.500</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782517022/cheese_jbp939.png" alt="Cheese Burger" class="product-img cheese-burger-img">
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Fresh Burger</h3>
+              <p class="product-description">Carne, queso cheddar, salsa de queso cheddar, lechuga, tomate, cebolla y salsa de la casa.</p>
+              <span class="product-price">$8.000</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782515756/freshburger_altptp.png" alt="Fresh Burger" class="product-img fresh-burger-img">
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Cuarto de Libra</h3>
+              <p class="product-description">Carne, queso cheddar, salsa de queso cheddar, pepinillos seleccionados, cebolla, ketchup y mostaza.</p>
+              <span class="product-price">$8.000</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782517463/4to_h5v3lk.png" alt="Cuarto de Libra" class="product-img cuarto-libra-img">
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Oklahoma Burger</h3>
+              <p class="product-description">Carne, queso cheddar, salsa de queso cheddar y cebolla en finas láminas a la plancha.</p>
+              <span class="product-price">$7.500</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782506558/oklahoma_sohfyo.png" alt="Oklahoma Burger" class="product-img oklahoma-img">
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">BBQ Rings</h3>
+              <p class="product-description">Carne, queso cheddar, salsa de queso cheddar, aros de cebolla crujientes, tocino y salsa BBQ ahumada.</p>
+              <span class="product-price">$8.500</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782515325/ChatGPT_Image_8_feb_2026_12_34_08_f8f5z5.png" alt="BBQ Rings" class="product-img bbq-rings-img">
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Italiana</h3>
+              <p class="product-description">Carne, palta, tomate y mayonesa.</p>
+              <span class="product-price">$8.500</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782505520/Italiana_urkp7q.png" alt="Italiana" class="product-img italiana-img">
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Sweet Burger</h3>
+              <p class="product-description">Carne, queso cheddar, salsa de queso, cebolla caramelizada, tocino y salsa de la casa.</p>
+              <span class="product-price">$8.500</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782517863/sweet_eprojp.png" alt="Sweet Burger" class="product-img sweet-burger-img">
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Red Melt</h3>
+              <p class="product-description">Carne, queso cheddar, salsa de queso cheddar, mermelada de pimentón artesanal, cebolla crispy, tocino y mayonesa.</p>
+              <span class="product-price">$9.000</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782516893/Disen%CC%83o_sin_ti%CC%81tulo_11_xszzsb.png" alt="Red Melt" class="product-img red-melt-img">
+            </div>
+          </div>
+          <!-- Card 9 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Bacon Jam</h3>
+              <p class="product-description">Carne, queso cheddar, salsa de queso cheddar, mermelada de tocino, pepinillos seleccionados y mayonesa.</p>
+              <span class="product-price">$9.000</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782504946/BaconJam_pnd6gc.png" alt="Bacon Jam" class="product-img">
+            </div>
+          </div>
+          <!-- Card 10 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Bigmac</h3>
+              <p class="product-description">Doble carne, queso cheddar, lechuga, pepinillos, cebolla en cuadros, nuestra salsa de la casa.</p>
+              <span class="product-price">$9.000</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782940369/bm_hg96mj.png" alt="Bigmac" class="product-img bigmac-burger-img">
+            </div>
+          </div>
+          <!-- Card 11 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Avocado Burger</h3>
+              <p class="product-description">Carne, salsa de queso cheddar, palta madura, cebolla en cubos, lechuga fresca y mayonesa.</p>
+              <span class="product-price">$9.000</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782520127/avocado_nhajtg.png" alt="Avocado Burger" class="product-img avocado-burger-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Subpages (Acompañamientos Menu) -->
+      <div class="menu-detail-view" id="acompanamientos-detail" style="display: none;">
+        <button class="back-btn" onclick="goToHome(event)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          VOLVER AL INICIO
+        </button>
+        <h2 class="detail-title">Acompañamientos</h2>
+        <div class="detail-divider"></div>
+        <div class="products-grid">
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Papas Naturales</h3>
+              <p class="product-description">Descripción 1 (Pendiente)</p>
+              <span class="product-price">$5.000</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782570308/natu_nnuell.png" alt="Papas Naturales" class="product-img fries-product-img">
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Papas Crujientes</h3>
+              <p class="product-description">Descripción 2 (Pendiente)</p>
+              <span class="product-price">$7.500</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782522074/papastocino_k5usct.png" alt="Papas Crujientes" class="product-img fries-product-img">
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Papas Smash</h3>
+              <p class="product-description">Descripción 3 (Pendiente)</p>
+              <span class="product-price">$9.500</span>
+            </div>
+            <div class="product-card-right">
+              <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782570307/pasm_afu3vq.png" alt="Papas Smash" class="product-img fries-product-img">
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="product-card product-card-hidden">
+            <div class="product-card-left">
+              <h3 class="product-title">Pop Corns Pollo</h3>
+              <p class="product-description">Descripción 4 (Pendiente)</p>
+              <span class="product-price">$5.000</span>
+            </div>
+            <div class="product-card-right">
+              <div class="product-image-placeholder">
+                <span class="placeholder-text">FOTO</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="product-card product-card-hidden">
+            <div class="product-card-left">
+              <h3 class="product-title">Bolas Jalapeño</h3>
+              <p class="product-description">Descripción 5 (Pendiente)</p>
+              <span class="product-price">$5.000</span>
+            </div>
+            <div class="product-card-right">
+              <div class="product-image-placeholder">
+                <span class="placeholder-text">FOTO</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="product-card product-card-hidden">
+            <div class="product-card-left">
+              <h3 class="product-title">Empanadas 8 Uni</h3>
+              <p class="product-description">Descripción 6 (Pendiente)</p>
+              <span class="product-price">$5.000</span>
+            </div>
+            <div class="product-card-right">
+              <div class="product-image-placeholder">
+                <span class="placeholder-text">FOTO</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 7 (Próximamente Placeholder) -->
+          <div class="product-card coming-soon-card" style="pointer-events: none; opacity: 0.6; cursor: default;">
+            <div class="product-card-left">
+              <h3 class="product-title" style="color: #888888;">Más Opciones</h3>
+              <p class="product-description" style="color: #555555;">Nuevos acompañamientos se están cocinando...</p>
+              <span class="product-price" style="color: #888888; font-size: 0.85rem; letter-spacing: 0.05em;">PRÓXIMAMENTE</span>
+            </div>
+            <div class="product-card-right" style="background-color: #0b0b0b;">
+              <div class="product-image-placeholder" style="background-color: #0b0b0b;">
+                <span class="placeholder-text" style="color: #333333;">YSI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Subpages (Bebidas Menu) -->
+      <div class="menu-detail-view" id="bebidas-detail" style="display: none;">
+        <button class="back-btn" onclick="goToHome(event)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          VOLVER AL INICIO
+        </button>
+        <h2 class="detail-title">Bebidas</h2>
+        <div class="detail-divider"></div>
+        <div class="products-grid">
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Bebidas en Lata</h3>
+              <p class="product-description">Descripción 1 (Pendiente)</p>
+              <span class="product-price">$1.500</span>
+            </div>
+            <div class="product-card-right">
+              <div class="product-image-placeholder">
+                <span class="placeholder-text">FOTO</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Jugos Naturales</h3>
+              <p class="product-description">Descripción 2 (Pendiente)</p>
+              <span class="product-price">$3.000</span>
+            </div>
+            <div class="product-card-right">
+              <div class="product-image-placeholder">
+                <span class="placeholder-text">FOTO</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-card-left">
+              <h3 class="product-title">Té o Café</h3>
+              <p class="product-description">Descripción 3 (Pendiente)</p>
+              <span class="product-price">$1.500</span>
+            </div>
+            <div class="product-card-right">
+              <div class="product-image-placeholder">
+                <span class="placeholder-text">FOTO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Column 1: Logo and Branding -->
+      <div class="footer-col branding-col">
+        <div class="footer-logos-wrapper">
+          <img src="https://res.cloudinary.com/drwdiqszj/image/upload/v1782359722/BBlogof_pjm0fg.png"
+            alt="Burger Boom Logo" class="footer-logo-img">
+        </div>
+        <h3 class="footer-brand-title">BURGER BOOM</h3>
+      </div>
+
+      <!-- Column 2: Información -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Información</h4>
+        <ul class="footer-col-links">
+          <li><a href="#" onclick="openServiceModal(event)">Retiro y Delivery</a></li>
+          <li><a href="#" onclick="openPaymentModal(event)">Medios de pago</a></li>
+          <li><a href="#" onclick="openOrderModal(event)">Cómo pedir</a></li>
+        </ul>
+      </div>
+
+
+
+    </div>
+
+    <!-- Bottom copyright and credits -->
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        © 2026 BURGER BOOM. TODOS LOS DERECHOS RESERVADOS.
+      </div>
+      <div class="footer-powered">
+        <span>POWERED BY</span>
+        <span class="powered-brand">YSI</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showCategory(categoryId) {
+      if (typeof closeMobileMenu === 'function') closeMobileMenu();
+
+      // Hide categories view and all subpages
+      document.getElementById('categories-view').style.display = 'none';
+      document.getElementById('burgers-detail').style.display = 'none';
+      document.getElementById('acompanamientos-detail').style.display = 'none';
+      document.getElementById('bebidas-detail').style.display = 'none';
+
+      // Translate categoryId if needed
+      let viewId = categoryId;
+      if (categoryId === 'sides') viewId = 'acompanamientos';
+      if (categoryId === 'drinks') viewId = 'bebidas';
+
+      const targetView = document.getElementById(viewId + '-detail');
+      if (targetView) {
+        targetView.style.display = 'block';
+      }
+
+      // Update nav link active state
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      const activeLink = Array.from(document.querySelectorAll('.nav-link')).find(link => link.textContent.trim().toUpperCase() === 'INICIO');
+      if (activeLink) activeLink.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showCategories() {
+      if (typeof closeMobileMenu === 'function') closeMobileMenu();
+
+      // Hide all subpages and show categories
+      document.getElementById('burgers-detail').style.display = 'none';
+      document.getElementById('acompanamientos-detail').style.display = 'none';
+      document.getElementById('bebidas-detail').style.display = 'none';
+      document.getElementById('categories-view').style.display = 'block';
+
+      // Update nav link active state
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      const activeLink = Array.from(document.querySelectorAll('.nav-link')).find(link => link.textContent.trim().toUpperCase() === 'INICIO');
+      if (activeLink) activeLink.classList.add('active');
+    }
+
+    function goToHome(event) {
+      if (event) event.preventDefault();
+      window.location.hash = '';
+    }
+
+    function handleRouting() {
+      const hash = window.location.hash;
+      if (hash === '#burgers' || hash === '#sides' || hash === '#drinks' || hash === '#acompanamientos' || hash === '#bebidas') {
+        showCategory(hash.slice(1));
+      } else if (hash === '#ubicacion-section') {
+        showCategories();
+        
+        // Highlight UBICACIÓN link
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        const ubiLink = Array.from(document.querySelectorAll('.nav-link')).find(link => link.textContent.includes('UBICACIÓN'));
+        if (ubiLink) ubiLink.classList.add('active');
+
+        // Scroll to the section smoothly
+        setTimeout(() => {
+          const element = document.getElementById('ubicacion-section');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // Clean URL if there's a trailing empty hash
+        if (hash === '#' || hash === '') {
+          if (window.history && window.history.replaceState) {
+            history.replaceState("", document.title, window.location.pathname + window.location.search);
+          }
+        }
+        showCategories();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    window.addEventListener('hashchange', handleRouting);
+    window.addEventListener('load', handleRouting);
+
+    // Dynamic Status Light Logic (Chile Timezone)
+    function updateStatusLight() {
+      const badge = document.getElementById('status-badge');
+      if (!badge) return;
+
+      const dot = badge.querySelector('.status-dot');
+      const text = badge.querySelector('.status-text');
+
+      try {
+        // Get current date/time in Chile timezone directly using Intl.DateTimeFormat
+        const formatter = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/Santiago',
+          weekday: 'short',
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: false
+        });
+        const parts = formatter.formatToParts(new Date());
+        const map = new Map(parts.map(p => [p.type, p.value]));
+
+        const dayName = map.get('weekday'); // "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"
+        const hour = parseInt(map.get('hour'), 10);
+        const minute = parseInt(map.get('minute'), 10);
+
+        const currentMinutes = hour * 60 + minute;
+        let isOpen = false;
+
+        // Schedule:
+        // Monday to Sunday, except Tuesday:
+        // Friday and Saturday: 18:30 to 23:30
+        // Monday, Wednesday, Thursday, Sunday: 18:30 to 22:30
+        // Tuesday: Closed (isOpen = false)
+        if (dayName !== 'Tue') { // Not Tuesday
+          const openTime = 18 * 60 + 30; // 18:30
+          let closeTime = 22 * 60 + 30; // 22:30
+
+          if (dayName === 'Fri' || dayName === 'Sat') { // Friday or Saturday
+            closeTime = 23 * 60 + 30; // 23:30
+          }
+
+          if (currentMinutes >= openTime && currentMinutes < closeTime) {
+            isOpen = true;
+          }
+        }
+
+        if (isOpen) {
+          badge.className = 'status-badge open';
+          text.textContent = 'ABIERTO';
+        } else {
+          badge.className = 'status-badge closed';
+          text.textContent = 'CERRADO';
+        }
+      } catch (e) {
+        console.error('Error calculating Chile timezone status:', e);
+        // Fallback to closed if check fails
+        badge.className = 'status-badge closed';
+        text.textContent = 'CERRADO';
+      }
+    }
+
+    // Run status check on load
+    updateStatusLight();
+    // Check every 30 seconds
+    setInterval(updateStatusLight, 30000);
+
+    // Modal Control functions with browser history integration
+    function openPaymentModal(event) {
+      if (event) event.preventDefault();
+      const modal = document.getElementById('payment-modal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        history.pushState({ modalOpen: 'payment-modal' }, "");
+      }
+    }
+
+    function closePaymentModal(event, triggerHistoryBack = true) {
+      if (event && event.preventDefault) event.preventDefault();
+      const modal = document.getElementById('payment-modal');
+      if (modal && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (triggerHistoryBack && history.state && history.state.modalOpen === 'payment-modal') {
+          history.back();
+        }
+      }
+    }
+
+    // Service Modal Control functions
+    function openServiceModal(event) {
+      if (event) event.preventDefault();
+      const modal = document.getElementById('service-modal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        history.pushState({ modalOpen: 'service-modal' }, "");
+      }
+    }
+
+    function closeServiceModal(event, triggerHistoryBack = true) {
+      if (event && event.preventDefault) event.preventDefault();
+      const modal = document.getElementById('service-modal');
+      if (modal && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (triggerHistoryBack && history.state && history.state.modalOpen === 'service-modal') {
+          history.back();
+        }
+      }
+    }
+
+    // Order Modal Control functions
+    function openOrderModal(event) {
+      if (event) event.preventDefault();
+      const modal = document.getElementById('order-modal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        history.pushState({ modalOpen: 'order-modal' }, "");
+      }
+    }
+
+    function closeOrderModal(event, triggerHistoryBack = true) {
+      if (event && event.preventDefault) event.preventDefault();
+      const modal = document.getElementById('order-modal');
+      if (modal && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (triggerHistoryBack && history.state && history.state.modalOpen === 'order-modal') {
+          history.back();
+        }
+      }
+    }
+
+    // Product Detail Modal Control functions
+    function openProductDetailModal(card) {
+      if (!card) return;
+      
+      const title = card.querySelector('.product-title')?.textContent || '';
+      const description = card.querySelector('.product-description')?.textContent || '';
+      const price = card.querySelector('.product-price')?.textContent || '';
+      const img = card.querySelector('.product-img');
+      
+      const modal = document.getElementById('product-detail-modal');
+      const modalTitle = document.getElementById('modal-product-title');
+      const modalDesc = document.getElementById('modal-product-description');
+      const modalPrice = document.getElementById('modal-product-price');
+      const modalImg = document.getElementById('modal-product-img');
+      const modalPlaceholder = document.getElementById('modal-product-placeholder');
+      
+      if (modal && modalTitle && modalDesc) {
+        modalTitle.textContent = title;
+        modalDesc.textContent = description;
+        if (modalPrice) modalPrice.textContent = price;
+        
+        if (img && img.src) {
+          modalImg.src = img.src;
+          modalImg.style.display = 'block';
+          if (modalPlaceholder) modalPlaceholder.style.display = 'none';
+          
+          // Check if this image needs object-fit: contain inside the detail modal
+          if (img.classList.contains('fries-product-img')) {
+            modalImg.classList.add('modal-img-contain');
+          } else {
+            modalImg.classList.remove('modal-img-contain');
+          }
+        } else {
+          modalImg.style.display = 'none';
+          if (modalPlaceholder) modalPlaceholder.style.display = 'flex';
+        }
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        history.pushState({ modalOpen: 'product-detail-modal' }, "");
+      }
+    }
+
+    function closeProductDetailModal(event, triggerHistoryBack = true) {
+      if (event && event.preventDefault) event.preventDefault();
+      const modal = document.getElementById('product-detail-modal');
+      if (modal && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (triggerHistoryBack && history.state && history.state.modalOpen === 'product-detail-modal') {
+          history.back();
+        }
+      }
+    }
+
+    // Listen to history state popping to close modals on browser back button clicks
+    window.addEventListener('popstate', (event) => {
+      const activeModalId = event.state && event.state.modalOpen;
+      if (activeModalId !== 'payment-modal') closePaymentModal(null, false);
+      if (activeModalId !== 'service-modal') closeServiceModal(null, false);
+      if (activeModalId !== 'order-modal') closeOrderModal(null, false);
+      if (activeModalId !== 'product-detail-modal') closeProductDetailModal(null, false);
+    });
+
+    // High-performance Scroll header shrink and logo slide logic (GPU-accelerated)
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
+    const scrollHeader = document.querySelector('.header');
+
+    function handleScroll() {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (scrollHeader) {
+            if (lastKnownScrollPosition > 50) {
+              scrollHeader.classList.add('scrolled');
+            } else {
+              scrollHeader.classList.remove('scrolled');
+            }
+          }
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('load', handleScroll);
+
+    // Mobile navigation menu toggle and close functions
+    function toggleMobileMenu(event) {
+      if (event) event.preventDefault();
+      const header = document.querySelector('.header');
+      if (header) {
+        header.classList.toggle('mobile-menu-open');
+      }
+    }
+
+    function closeMobileMenu() {
+      const header = document.querySelector('.header');
+      if (header) {
+        header.classList.remove('mobile-menu-open');
+      }
+    }
+
+    // Automatically close mobile menu when clicking nav links & bind card click event delegation
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          closeMobileMenu();
+        });
+      });
+
+      // Product card click delegation across all grids
+      document.querySelectorAll('.products-grid').forEach(grid => {
+        grid.addEventListener('click', (event) => {
+          const card = event.target.closest('.product-card');
+          if (card) {
+            openProductDetailModal(card);
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Floating Instagram Button -->
+  <a href="https://www.instagram.com/burgerboom.cl/" target="_blank" rel="noopener noreferrer" class="instagram-float"
+    aria-label="Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="instagram-float-icon">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  </a>
+
+  <!-- Modal Medios de Pago -->
+  <div class="modal-overlay" id="payment-modal" onclick="closePaymentModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closePaymentModal()">&times;</button>
+      <h3 class="modal-title">MEDIOS DE PAGO</h3>
+      <div class="modal-divider"></div>
+      <p class="modal-text">
+        ACEPTAMOS TRANSFERENCIA BANCARIA, EFECTIVO Y TARJETAS DE DÉBITO O CRÉDITO.
+      </p>
+      <div class="payment-methods-grid">
+        <div class="payment-method-item">
+          <!-- Card Icon SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="payment-icon">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+          </svg>
+          <span>TARJETAS</span>
+        </div>
+        <div class="payment-method-item">
+          <!-- Cash Icon SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="payment-icon">
+            <rect x="2" y="6" width="20" height="12" rx="2" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          <span>EFECTIVO</span>
+        </div>
+        <div class="payment-method-item">
+          <!-- Transfer Icon SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="payment-icon">
+            <path d="M17 3L21 7M21 7L17 11M21 7H9C5 7 3 9 3 13M7 21L3 17M3 17L7 13M3 17H15C19 17 21 15 21 11" />
+          </svg>
+          <span>TRANSFERENCIA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Modalidades de Servicio -->
+  <div class="modal-overlay" id="service-modal" onclick="closeServiceModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeServiceModal()">&times;</button>
+      <h3 class="modal-title">MODALIDADES DE SERVICIO</h3>
+      <div class="modal-divider"></div>
+      <p class="modal-text">
+        CÓMO DISFRUTAR DE TU BURGER BOOM FAVORITA.
+      </p>
+      <div class="service-methods-grid">
+        <div class="service-method-item">
+          <!-- Dine-in Icon SVG (Fork) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-icon" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v10M18 2v6c0 3-2.5 5.5-6 5.5S6 11 6 8V2M12 13.5v8.5" />
+          </svg>
+          <div class="service-text-wrapper">
+            <strong>CONSUMO EN LOCAL</strong>
+            <span>Mesas listas para ti.</span>
+          </div>
+        </div>
+        <div class="service-method-item">
+          <!-- Pickup Icon SVG (Shopping Bag) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-icon">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3 6h18M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <div class="service-text-wrapper">
+            <strong>RETIRO EN TIENDA</strong>
+            <span>Pide y retira.</span>
+          </div>
+        </div>
+        <div class="service-method-item">
+          <!-- Delivery Icon SVG (Delivery Scooter) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-icon">
+            <rect x="1" y="3" width="15" height="13" rx="2" />
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+            <circle cx="5.5" cy="18.5" r="2.5" />
+            <circle cx="18.5" cy="18.5" r="2.5" />
+          </svg>
+          <div class="service-text-wrapper">
+            <strong>DELIVERY</strong>
+            <span>Despacho directo a tu casa.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Cómo Pedir -->
+  <div class="modal-overlay" id="order-modal" onclick="closeOrderModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+      <h3 class="modal-title">¿CÓMO PEDIR?</h3>
+      <div class="modal-divider"></div>
+      <p class="modal-text" style="margin-bottom: 1.8rem;">
+        TODOS NUESTROS PEDIDOS SE REALIZAN DE MANERA EXCLUSIVA A TRAVÉS DE NUESTRO INSTAGRAM.
+      </p>
+      
+      <div class="order-steps">
+        <div class="order-step-item">
+          <div class="step-number">1</div>
+          <div class="step-text">
+            <strong>Explora nuestro Menú</strong>
+            <span>Revisa todas nuestras burgers, acompañamientos y bebidas aquí en la web para decidir lo que vas a pedir.</span>
+          </div>
+        </div>
+        <div class="order-step-item">
+          <div class="step-number">2</div>
+          <div class="step-text">
+            <strong>Escríbenos por Instagram</strong>
+            <span>Envíanos un mensaje directo (DM) a nuestro perfil <a href="https://www.instagram.com/burgerboom.cl/" target="_blank" rel="noopener noreferrer" class="instagram-link">@burgerboom.cl</a>.</span>
+          </div>
+        </div>
+        <div class="order-step-item">
+          <div class="step-number">3</div>
+          <div class="step-text">
+            <strong>Confirmamos y Coordinamos</strong>
+            <span>Te confirmaremos el valor total, te enviaremos los datos de pago y coordinaremos el retiro o delivery.</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://www.instagram.com/burgerboom.cl/" target="_blank" rel="noopener noreferrer" class="instagram-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-instagram-icon">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+        <span>IR A INSTAGRAM</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal Detalle de Producto -->
+  <div class="modal-overlay" id="product-detail-modal" onclick="closeProductDetailModal(event)">
+    <div class="product-modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeProductDetailModal()">&times;</button>
+      
+      <div class="product-modal-layout">
+        <!-- Left Side: Image -->
+        <div class="product-modal-image-container">
+          <img id="modal-product-img" src="" alt="Product Image" class="product-modal-img">
+          <div id="modal-product-placeholder" class="product-modal-placeholder" style="display: none;">
+            <svg viewBox="0 0 100 100" class="modal-placeholder-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M15,50 C15,25 85,25 85,50" stroke-linecap="round" />
+              <rect x="12" y="54" width="76" height="5" rx="2" />
+              <path d="M18,63 L82,63 C85,63 85,73 82,73 L18,73 C15,73 15,63 18,63 Z" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Right Side: Details -->
+        <div class="product-modal-info">
+          <h3 id="modal-product-title" class="product-modal-title">PRODUCTO</h3>
+          <div class="modal-divider" style="margin: 0.5rem 0 1.2rem 0;"></div>
+          <span id="modal-product-price" class="product-modal-price"></span>
+          <p id="modal-product-description" class="product-modal-description">Descripción...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
