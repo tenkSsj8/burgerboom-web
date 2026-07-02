@@ -424,9 +424,10 @@ body {
   display: block;
 }
 
-.fries-product-img {
+.fries-product-img,
+.bebidas-product-img {
   object-fit: contain !important;
-  padding: 4%; /* Zoom out slightly so the wooden board is fully visible */
+  padding: 4%; /* Zoom out slightly so the wooden board or bottles are fully visible */
 }
 
 .italiana-img,
