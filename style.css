@@ -425,6 +425,10 @@ body {
   padding: 4%; /* Zoom out slightly so the wooden board or bottles are fully visible */
 }
 
+#burgers-detail .product-img {
+  object-fit: contain !important;
+}
+
 .italiana-img,
 .oklahoma-img,
 .bbq-rings-img,
