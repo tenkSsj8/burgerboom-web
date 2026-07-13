@@ -427,19 +427,20 @@ body {
 
 #burgers-detail .product-img {
   object-fit: contain !important;
+  transform: scale(1.2); /* Base zoom to make close-up burgers (Bacon Jam, Spicy, Chicken) look large and beautiful */
 }
 
-.italiana-img,
-.oklahoma-img,
-.bbq-rings-img,
-.fresh-burger-img,
-.red-melt-img,
-.cheese-burger-img,
-.cuarto-libra-img,
-.sweet-burger-img,
-.avocado-burger-img,
-.classic-burger-img {
-  transform: scale(1.15); /* Zoom in slightly to visually match the Bacon Jam burger proportion */
+#burgers-detail .italiana-img,
+#burgers-detail .oklahoma-img,
+#burgers-detail .bbq-rings-img,
+#burgers-detail .fresh-burger-img,
+#burgers-detail .red-melt-img,
+#burgers-detail .cheese-burger-img,
+#burgers-detail .cuarto-libra-img,
+#burgers-detail .sweet-burger-img,
+#burgers-detail .avocado-burger-img,
+#burgers-detail .classic-burger-img {
+  transform: scale(1.4) !important; /* Zoom in slightly more for burgers shot from further away */
 }
 
 .placeholder-text {
