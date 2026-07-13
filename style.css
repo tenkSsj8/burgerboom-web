@@ -342,7 +342,8 @@ body {
   display: flex;
   overflow: hidden;
   position: relative;
-  height: 160px; /* Fixed elegant height */
+  min-height: 160px; /* Minimum elegant height */
+  height: auto; /* Allow card to grow dynamically to fit description */
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
