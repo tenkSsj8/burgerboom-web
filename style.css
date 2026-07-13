@@ -382,12 +382,6 @@ body {
   line-height: 1.4;
   font-weight: 300;
   margin-bottom: auto;
-  /* Multi-line line clamping */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .product-price {
