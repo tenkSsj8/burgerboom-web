@@ -542,70 +542,18 @@
     window.addEventListener('hashchange', handleRouting);
     window.addEventListener('load', handleRouting);
 
-    // Dynamic Status Light Logic (Chile Timezone)
+    // Dynamic Status Light Logic - Fixed to Closed Until Further Notice
     function updateStatusLight() {
       const badge = document.getElementById('status-badge');
       if (!badge) return;
 
-      const dot = badge.querySelector('.status-dot');
       const text = badge.querySelector('.status-text');
-
-      try {
-        // Get current date/time in Chile timezone directly using Intl.DateTimeFormat
-        const formatter = new Intl.DateTimeFormat('en-US', {
-          timeZone: 'America/Santiago',
-          weekday: 'short',
-          hour: 'numeric',
-          minute: 'numeric',
-          hour12: false
-        });
-        const parts = formatter.formatToParts(new Date());
-        const map = new Map(parts.map(p => [p.type, p.value]));
-
-        const dayName = map.get('weekday'); // "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"
-        const hour = parseInt(map.get('hour'), 10);
-        const minute = parseInt(map.get('minute'), 10);
-
-        const currentMinutes = hour * 60 + minute;
-        let isOpen = false;
-
-        // Schedule:
-        // Monday to Sunday, except Tuesday:
-        // Friday and Saturday: 18:30 to 23:30
-        // Monday, Wednesday, Thursday, Sunday: 18:30 to 22:30
-        // Tuesday: Closed (isOpen = false)
-        if (dayName !== 'Tue') { // Not Tuesday
-          const openTime = 18 * 60 + 30; // 18:30
-          let closeTime = 22 * 60 + 30; // 22:30
-
-          if (dayName === 'Fri' || dayName === 'Sat') { // Friday or Saturday
-            closeTime = 23 * 60 + 30; // 23:30
-          }
-
-          if (currentMinutes >= openTime && currentMinutes < closeTime) {
-            isOpen = true;
-          }
-        }
-
-        if (isOpen) {
-          badge.className = 'status-badge open';
-          text.textContent = 'ABIERTO';
-        } else {
-          badge.className = 'status-badge closed';
-          text.textContent = 'CERRADO';
-        }
-      } catch (e) {
-        console.error('Error calculating Chile timezone status:', e);
-        // Fallback to closed if check fails
-        badge.className = 'status-badge closed';
-        text.textContent = 'CERRADO';
-      }
+      badge.className = 'status-badge closed';
+      text.textContent = 'CERRADO HASTA NUEVO AVISO';
     }
 
     // Run status check on load
     updateStatusLight();
-    // Check every 30 seconds
-    setInterval(updateStatusLight, 30000);
 
     // Modal Control functions with browser history integration
     function openPaymentModal(event) {
